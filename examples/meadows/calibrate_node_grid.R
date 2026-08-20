@@ -21,7 +21,7 @@ source("R/functions/calibration/calibration_functions.R")
 # Specify the path to the sidekick data file you recorded for calibration
 sidekick_file_path <- "data/meadows/sidekick/calibration_2023_8_3_all.csv"
 # Specify the path to your database file
-database_file <- "~/development/aos_test/data/meadows.duckdb"
+database_file <- "~/Desktop/full_data/meadows.duckdb"
 
 # Specify the tag ID that you used in your calibration
 my_tag_id <- "072A6633"
@@ -59,13 +59,17 @@ node_health_df <- node_health_df %>% distinct(node_id, time, recorded_at, .keep_
 # Calculate the average node locations
 node_locs <- calculate_node_locations(node_health_df)
 # Plot the average node locations
-node_loc_plot <- plot_node_locations(node_health_df, theme = classic_plot_theme)
+node_loc_plot <- plot_node_locations(node_health_df, node_locs, theme = classic_plot_theme)
 node_loc_plot
 # Write the node locations to a file
 export_node_locations("examples/meadows/output/node_locations.csv", node_locs)
 # Draw a map with the node locations
 node_map <- map_node_locations(node_locs, tile_url = my_tile_url)
 node_map
+
+print(node_locs)
+
+write.csv(node_locs, "meadows_node_locations.csv")
 
 ## -----------------------------------------------------------------------------
 ##  3.) LOAD STATION DETECTION DATA FROM FILES
@@ -134,3 +138,4 @@ print(rssi_coefs)
 ## -----------------------------------------------------------------------------
 ##  GRID CALIBRATED!!!
 ## -----------------------------------------------------------------------------
+

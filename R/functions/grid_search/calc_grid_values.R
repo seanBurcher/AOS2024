@@ -9,6 +9,11 @@ calc_grid_values <- function(grid_df, rec_df, rssi_coefs) {
             rec <- rec_df[n, ]
             if (rec$n > 0) {
                 dist <- haversine(rec$lat, rec$lon, bin_lat, bin_lon)
+
+                ground_dist <- haversine(rec$lat, rec$lon, bin_lat, bin_lon)
+                node_height <- 2.0
+                dist <- sqrt(ground_dist^2 + node_height^2)
+
                 expected_rssi <- predict_rssi(rssi_coefs, dist)
                 # diff2 <- (rec$avg_rssi - expected_rssi) * (rec$avg_rssi - expected_rssi)
                 diff2 <- (rec$filtered_rssi - expected_rssi) * (rec$filtered_rssi - expected_rssi)

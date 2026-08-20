@@ -4,24 +4,24 @@ library(ggplot2)
 options(digits = 10)
 
 # DEFS
-source("src/defs/plot_themes.R")
+source("R/defs/plot_themes.R")
 # UTILS
-source("src/functions/utils/get_time_value.R")
+source("R/functions/utils/get_time_value.R")
 # NDOE
-source("src/functions/node/node_functions.R")
+source("R/functions/node/node_functions.R")
 
 ## -----------------------------------------------------------------------------
 ##  SPECIFY PARAMETERS HERE
 ## -----------------------------------------------------------------------------
 # Specify the path to the directory with your station detection data
-database_directory <- "~/development/aos_test/data/meadows.duckdb"
+database_directory <- "~/Desktop/full_data/meadows.duckdb"
 
 # Specify the time range of node data you want to import for this analysis
 start_time <- as.POSIXct("2023-10-01 00:00:00",tz="GMT")
 stop_time <- as.POSIXct("2023-11-01 00:00:00",tz="GMT")
 
 ## -----------------------------------------------------------------------------
-##  1.) LOAD NODE HEALTH DATA FROM FILES
+##  1.) LOAD NODE HEALTH DATA FROM DB
 ## -----------------------------------------------------------------------------
 # Load from DB
 con <- DBI::dbConnect(duckdb::duckdb(), dbdir = database_directory, read_only = TRUE)
@@ -52,15 +52,17 @@ ggplot(node_health_df) +
   classic_plot_theme
 
 # Plot the Battery & Solar voltage vs. time for a specific node
-selected_node_id <- "326710"
+selected_node_id <- "3B3B8F"
 batt_solar_plot <- plot_battery_solar(node_health_df = node_health_df, selected_node_id = selected_node_id)
 batt_solar_plot 
 
 ## -----------------------------------------------------------------------------
 ##  3.) CHECK GPS
 ## -----------------------------------------------------------------------------
-
-
+selected_node_id <- "326710"
+ggplot(subset.data.frame(node_health_df,node_id==selected_node_id)) +
+  geom_point(aes(x=time,y=latitude)) +
+  classic_plot_theme
 
 
 ## -----------------------------------------------------------------------------

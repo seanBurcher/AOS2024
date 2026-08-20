@@ -33,3 +33,24 @@ tag_hist_plot_theme <- theme(
         hjust = 0.5
     ),
 )
+
+publication_plot_theme <- theme(
+    axis.text.x = element_text(size = 20, vjust = 0.5, family = "serif"),
+    axis.text.y = element_text(size = 20, vjust = 0.5, family = "serif"),
+    axis.title.x = element_text(size = 20, vjust = 0.5, family = "serif"),
+    axis.title.y = element_text(size = 20, vjust = 0.5, family = "serif"),
+    axis.line = element_line(colour = "black", linewidth = 0.5),
+    panel.grid.major = element_line(colour = "grey", linewidth = 0.25),
+    panel.grid.minor = element_line(colour = "grey", linewidth = 0.1),
+    panel.background = element_rect(fill = "white"),
+    plot.margin = unit(c(1, 1, 0.5, 0.5), "inches"),
+    plot.title = element_text(
+        size = 25,
+        face = "bold",
+        hjust = 0.5
+    ),
+    legend.position = c(.9, .9),
+    legend.title = element_text(size = 20, vjust = 0.5, family = "serif"),
+    legend.text = element_text(size = 20, vjust = 0.5, family = "serif"),
+    legend.margin = margin(20, 20, 20, 20)
+)

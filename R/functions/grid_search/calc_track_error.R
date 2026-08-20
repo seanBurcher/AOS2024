@@ -12,6 +12,7 @@ calc_track_error <- function(sidekick_df, track_df) {
         ml_sol_lon = double(),
         max_rssi = double(),
         avg_rssi = double(),
+        max_grid_value = double(),
         error = double(),
         ml_error = double()
     )
@@ -37,6 +38,7 @@ calc_track_error <- function(sidekick_df, track_df) {
                 ml_sol_lon = track_point$ml_lon,
                 max_rssi = track_point$max_rssi,
                 avg_rssi = track_point$avg_rssi,
+                max_grid_value = track_point$max_grid_value,
                 error = error,
                 ml_error = ml_error
             )

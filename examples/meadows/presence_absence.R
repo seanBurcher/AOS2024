@@ -63,7 +63,6 @@ detection_df <- subset.data.frame(detection_df, tag_id %in% deployment_df$TagId)
 
 # OPTIONAL: Make selections here
 # deployment_df <- subset.data.frame(deployment_df,Species == "NOWA")
-# detection_df <- subset.data.frame(detection_df,TagId %in% deployment_df$TagId)
 
 det_summary_df <- detection_summary(
   detection_df = detection_df,
@@ -82,7 +81,7 @@ ggplot(detection_df, aes(x = time, y = factor(tag_id, det_summary_df$tag_id))) +
 ##  3.) SHOW DETECTION HISTORY FOR SELECTED TAG
 ## -----------------------------------------------------------------------------
 selected_tag_id <- "2D4B782D" # SWSP - Power Tag
-plot_start_time <- as.POSIXct("2023-10-05 10:00:00", tz = "GMT")
+plot_start_time <- as.POSIXct("2023-10-05 06:00:00", tz = "GMT")
 plot_stop_time <- as.POSIXct("2023-10-05 14:00:00", tz = "GMT")
 tag_dets <- subset.data.frame(detection_df, tag_id == selected_tag_id)
 ggplot(tag_dets) +

@@ -1,0 +1,2 @@
+G,NaN,undefined,undefined,undefined
+G,1723572996,39.000996633,-74.913900833,-0.846

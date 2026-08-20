@@ -9,7 +9,7 @@ calc_rssi_v_dist <- function(node_locs, sidekick_tag_df, detection_df, use_sync 
     )
 
     # Amount of time (seconds) to allow node and sidekick time to differ
-    time_window <- 1
+    time_window <- 2
 
     for (r in 1:nrow(sidekick_tag_df)) {
         sidekick_beep <- sidekick_tag_df[r, ]
@@ -37,8 +37,10 @@ calc_rssi_v_dist <- function(node_locs, sidekick_tag_df, detection_df, use_sync 
                     node_locs,
                     node_locs$node_id == beep_node_id
                 )
-
-                distance <- haversine(sidekick_beep$lat, sidekick_beep$lon, beep_node_loc$avg_lat, beep_node_loc$avg_lon)
+                # print("USING NODE HEIGHT!!!!")
+                ground_dist <- haversine(sidekick_beep$lat, sidekick_beep$lon, beep_node_loc$avg_lat, beep_node_loc$avg_lon)
+                node_height <- 0
+                distance <- sqrt(ground_dist^2 + node_height^2)
                 # print(distance)
                 this_result <- data.frame(
                     node_id = beep_node_id,

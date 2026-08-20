@@ -1,0 +1,48 @@
+msg at,msg
+2025-05-27 20:25:51,recording GPS fix
+2025-05-27 20:25:53,rotation finished
+2025-05-27 20:35:50,writing message to radio 1: version
+2025-05-27 20:35:50,writing message to radio 2: version
+2025-05-27 20:35:50,writing message to radio 3: version
+2025-05-27 20:35:50,writing message to radio 4: version
+2025-05-27 20:35:50,writing message to radio 5: version
+2025-05-27 20:35:51,alive
+2025-05-27 20:40:51,recording GPS fix
+2025-05-27 20:45:50,writing message to radio 1: version
+2025-05-27 20:45:50,writing message to radio 2: version
+2025-05-27 20:45:50,writing message to radio 3: version
+2025-05-27 20:45:50,writing message to radio 4: version
+2025-05-27 20:45:50,writing message to radio 5: version
+2025-05-27 20:45:51,alive
+2025-06-12 13:12:34,initializing base station
+2025-06-12 13:12:34,/dev/serial/by-path/platform-3f980000.usb-usb-0:1.2.1:1.0-port0 was added
+2025-06-12 13:12:34,/dev/serial/by-path/platform-3f980000.usb-usb-0:1.2.1:1.1-port0 was added
+2025-06-12 13:12:34,/dev/serial/by-path/platform-3f980000.usb-usb-0:1.2.1:1.2-port0 was added
+2025-06-12 13:12:34,/dev/serial/by-path/platform-3f980000.usb-usb-0:1.2.1:1.3-port0 was added
+2025-06-12 13:12:34,starting radio receivers
+2025-06-12 13:12:34,/dev/serial/by-path/platform-3f980000.usb-usb-0:1.2.2:1.0 was added
+2025-06-12 13:12:34,starting radio receivers
+2025-06-12 13:12:34,/dev/serial/by-path/platform-3f980000.usb-usb-0:1.2.3:1.0 was added
+2025-06-12 13:12:34,starting radio receivers
+2025-06-12 13:12:34,/dev/serial/by-path/platform-3f980000.usb-usb-0:1.2.4:1.0 was added
+2025-06-12 13:12:34,starting radio receivers
+2025-06-12 13:12:34,/dev/serial/by-path/platform-3f980000.usb-usb-0:1.2.5:1.0 was added
+2025-06-12 13:12:34,starting radio receivers
+2025-06-12 13:12:34,/dev/serial/by-path/platform-3f980000.usb-usb-0:1.2.6:1.0 was added
+2025-06-12 13:12:35,writing message to radio 1: version
+2025-06-12 13:12:35,opened radio on port,1
+2025-06-12 13:12:35,writing message to radio 2: version
+2025-06-12 13:12:35,writing message to radio 3: version
+2025-06-12 13:12:35,writing message to radio 4: version
+2025-06-12 13:12:35,opened radio on port,2
+2025-06-12 13:12:35,opened radio on port,3
+2025-06-12 13:12:35,opened radio on port,4
+2025-06-12 13:12:35,writing message to radio 5: version
+2025-06-12 13:12:35,opened radio on port,5
+2025-06-12 13:12:35,writing message to radio 1: preset:node3
+2025-06-12 13:12:35,writing message to radio 2: preset:node3
+2025-06-12 13:12:35,writing message to radio 3: preset:node3
+2025-06-12 13:12:35,writing message to radio 4: preset:node3
+2025-06-12 13:12:35,writing message to radio 5: preset:node3
+2025-06-12 13:12:44,server checkin initiated
+2025-06-12 13:12:45,server checkin success

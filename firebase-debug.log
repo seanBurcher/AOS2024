@@ -1,0 +1,14 @@
+[debug] [2026-08-20T15:37:39.356Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-08-20T15:37:39.366Z] > authorizing via signed-in user (sean.burcher@celltracktech.com)
+[debug] [2026-08-20T15:37:39.367Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-08-20T15:37:39.367Z] > authorizing via signed-in user (sean.burcher@celltracktech.com)
+[debug] [2026-08-20T15:37:39.381Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-08-20T15:37:39.382Z] > authorizing via signed-in user (sean.burcher@celltracktech.com)
+[debug] [2026-08-20T15:37:39.425Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-08-20T15:37:39.426Z] > authorizing via signed-in user (sean.burcher@celltracktech.com)
+[debug] [2026-08-20T15:37:39.426Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-08-20T15:37:39.426Z] > authorizing via signed-in user (sean.burcher@celltracktech.com)
+[debug] [2026-08-20T15:37:39.428Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-08-20T15:37:39.428Z] > authorizing via signed-in user (sean.burcher@celltracktech.com)
+[debug] [2026-08-20T15:37:39.428Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-08-20T15:37:39.428Z] > authorizing via signed-in user (sean.burcher@celltracktech.com)

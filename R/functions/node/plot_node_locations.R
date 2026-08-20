@@ -1,9 +1,9 @@
 library(ggplot2)
 
-plot_node_locations <- function(node_health_df, theme = NULL) {
+plot_node_locations <- function(health_df, locs, theme = NULL) {
     plot <- ggplot() +
         geom_point(
-            data = node_locs,
+            data = locs,
             aes(
                 x = avg_lon,
                 y = avg_lat,
@@ -13,7 +13,7 @@ plot_node_locations <- function(node_health_df, theme = NULL) {
             size = 3
         ) +
         geom_point(
-            data = node_health_df,
+            data = health_df,
             aes(
                 x = longitude,
                 y = latitude,

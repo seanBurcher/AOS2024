@@ -35,6 +35,11 @@ calculate_track <- function(
         error = double()
     )
 
+    # List to store grid values for each time step
+    grid_data_list <- list()
+    # Track valid rows
+    valid_row_count <- 0
+
     for (i in 1:num_steps) {
         print(paste("Starting: ", i, "/", num_steps))
         # Get the time range for this bin
@@ -59,13 +64,13 @@ calculate_track <- function(
 
         ##################################
         reduced_rec_df <- subset.data.frame(rec_df, rec_df$filtered_rssi >= rssi_coefs[1])
-        node_w_max <- reduced_rec_df[reduced_rec_df$filtered_rssi == max(reduced_rec_df$filtered_rssi),]
+        node_w_max <- reduced_rec_df[reduced_rec_df$filtered_rssi == max(reduced_rec_df$filtered_rssi), ]
 
-        multilat_fit <- nls(reduced_rec_df$exp_dist ~ haversine(reduced_rec_df$lat,reduced_rec_df$lon,ml_lat,ml_lon),
-                      reduced_rec_df,
-                      start= list(ml_lat = node_w_max$lat, ml_lon = node_w_max$lon),
-                      control=nls.control(warnOnly = T, minFactor=1/65536, maxiter = 100)
-                    )
+        multilat_fit <- nls(exp_dist ~ haversine(lat, lon, ml_lat, ml_lon),
+            data = reduced_rec_df,
+            start = list(ml_lat = node_w_max$lat, ml_lon = node_w_max$lon),
+            control = nls.control(warnOnly = T, minFactor = 1 / 65536, maxiter = 100)
+        )
 
         print(multilat_fit)
         co <- coef(summary(multilat_fit))
@@ -83,15 +88,18 @@ calculate_track <- function(
             solution <- subset(grid_values, grid_values$value == max(grid_values$value))
 
             # Add solution to the track
+            valid_row_count <- valid_row_count + 1
+            grid_data_list[[valid_row_count]] <- grid_values
             track_point <- data.frame(
                 i = i,
                 time = bin_stop_value,
                 lat = solution$center_lat,
                 lon = solution$center_lon,
+                max_grid_value = max(grid_values$value) / sum(grid_values$value),
                 max_rssi = max(rec_df$avg_rssi),
                 avg_rssi = mean(rec_df$avg_rssi),
-                ml_lat = co[1,1],
-                ml_lon = co[2,1],
+                ml_lat = co[1, 1],
+                ml_lon = co[2, 1],
                 error = NaN
             )
             track_df <- rbind(track_df, track_point)
@@ -112,5 +120,8 @@ calculate_track <- function(
     }
 
     print("Track calulcation complete!!!")
-    return(track_df)
+    # return(track_df)
+    # Trim to valid rows
+    track_df <- track_df[1:valid_row_count, ]
+    return(list(track_df = track_df, grid_data_list = grid_data_list))
 }

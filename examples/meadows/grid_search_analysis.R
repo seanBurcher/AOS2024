@@ -21,7 +21,6 @@ source("R/functions/grid_search/grid_search_functions.R")
 ##  SPECIFY PARAMETERS HERE
 ## -----------------------------------------------------------------------------
 # Specify the path to your database file
-#database_file <- "~/development/aos_test/data/meadows.duckdb"
 database_file <- "~/Desktop/full_data/meadows.duckdb"
 
 # (OPTIONAL) Specify Node time offsets if necessary
@@ -97,7 +96,7 @@ detection_df <- detection_df %>% mutate(time_value = as.integer(time))
 ## -----------------------------------------------------------------------------
 grid_center_lat <- 38.93664800
 grid_center_lon <- -74.9462
-grid_size_x <- 500 # meters
+grid_size_x <- 600 # meters
 grid_size_y <- 800 # meters
 grid_bin_size <- 5 # meters
 # Create a data frame with the details about the grid
@@ -189,7 +188,7 @@ print(track_error_df)
 print(min(track_error_df$error))
 print(max(track_error_df$error))
 print(paste("GS Solution Error = ", mean(track_error_df$error), " +/- ", sd(track_error_df$error)))
-#print(paste("ML Solution Error = ", mean(track_error_df$ml_error), " +/- ", sd(track_error_df$ml_error)))
+print(paste("ML Solution Error = ", mean(track_error_df$ml_error), " +/- ", sd(track_error_df$ml_error)))
 
 compare_map <- map_track_error(node_locs, track_error_df, sidekick_df, my_tile_url)
 compare_map
